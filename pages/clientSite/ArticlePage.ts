@@ -8,34 +8,41 @@ import { Page, Locator, expect } from "@playwright/test";
  */
 export class ArticlePage {
   constructor(private page: Page) {}
+
   get articleTitleInput(): Locator {
     return this.page.getByRole("textbox", {
       name: "Article title",
     });
   }
+
   get articleDescriptionInput(): Locator {
     return this.page.getByRole("textbox", {
       name: "What's this article ?",
     });
   }
+
   get articleBodyInput(): Locator {
     return this.page.getByRole("textbox", {
       name: "Write your article (in",
     });
   }
+
   get articleTagInput(): Locator {
     return this.page.getByRole("textbox", {
       name: "Enter tags",
     });
   }
+
   get publishArticleButton(): Locator {
     return this.page.getByRole("button", {
       name: "Publish Article",
     });
   }
+
   get publishErrorMessage(): Locator {
     return this.page.getByText("title can't be blank");
   }
+
   get editArticleButton(): Locator {
     return this.page
       .getByRole("link", {
@@ -43,6 +50,7 @@ export class ArticlePage {
       })
       .first();
   }
+
   get deleteArticleButton(): Locator {
     return this.page
       .getByRole("button", {
@@ -50,6 +58,7 @@ export class ArticlePage {
       })
       .first();
   }
+
   /**
    * Navigates to the edit article page by clicking the edit button.
    * Waits for the page to reach a network idle state after navigation.
@@ -123,6 +132,7 @@ export class ArticlePage {
 
     await expect(this.page.getByRole("heading", { name: title })).toBeVisible();
   }
+
   /**
    *  Deletes the currently selected article.
    * @returns {Promise<void>}

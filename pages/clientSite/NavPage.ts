@@ -12,70 +12,84 @@ export class NavPage {
   get navBar(): Locator {
     return this.page.getByRole("link", { name: "navigation" });
   }
+
   get conduitIcon(): Locator {
     return this.page.getByRole("link", { name: "conduit" });
   }
+
   get homePageLink(): Locator {
     return this.page.getByRole("link", {
       name: "Home",
       exact: true,
     });
   }
+
   get newArticleButton(): Locator {
     return this.page.getByRole("link", {
       name: "New Article",
     });
   }
+
   get settingsButton(): Locator {
     return this.page.getByRole("link", {
       name: "Settings",
     });
   }
+
   get settingsPageTitle(): Locator {
     return this.page.getByRole("heading", {
       name: "Your Settings",
     });
   }
+
   get logoutButton(): Locator {
     return this.page.getByRole("button", {
       name: "Or click here to logout",
     });
   }
+
   get signInNavigationLink(): Locator {
     return this.page.getByRole("link", {
       name: "Sign in",
     });
   }
+
   get signInPageTitle(): Locator {
     return this.page.getByRole("heading", {
       name: "Sign in",
     });
   }
+
   get emailInput(): Locator {
     return this.page.getByRole("textbox", {
       name: "Email",
     });
   }
+
   get passwordInput(): Locator {
     return this.page.getByRole("textbox", {
       name: "Password",
     });
   }
+
   get signInButton(): Locator {
     return this.page.getByRole("button", {
       name: "Sign in",
     });
   }
+
   get signUpNavigationLink(): Locator {
     return this.page.getByRole("link", {
       name: "Sign up",
     });
   }
+
   get signUpPageTitle(): Locator {
     return this.page.getByRole("heading", {
       name: "Sign up",
     });
   }
+
   get homePageHeading(): Locator {
     return this.page.getByRole("heading", {
       name: "conduit",
