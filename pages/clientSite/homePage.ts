@@ -6,7 +6,6 @@ import { Page, Locator, expect } from "@playwright/test";
  * @class HomePage
  * @typedef {HomePage}
  */
-
 export class HomePage {
   constructor(private page: Page) {}
 
@@ -17,6 +16,9 @@ export class HomePage {
     return this.page.getByText("Your Feed");
   }
   get globalFeedBtn(): Locator {
+    return this.page.getByText("Global Feed");
+  }
+  get bondarAcademyLink(): Locator {
     return this.page.getByRole("link", {
       name: "www.bondaracademy.com",
     });
@@ -31,6 +33,7 @@ export class HomePage {
    */
   async navigateToHomePageGuest(): Promise<void> {
     await this.page.goto(process.env.URL as string);
+
     await expect(this.homeBanner).toBeVisible();
   }
 
@@ -40,6 +43,7 @@ export class HomePage {
    */
   async navigateToHomePageUser(): Promise<void> {
     await this.page.goto(process.env.URL as string);
+
     await expect(this.yourFeedBtn).toBeVisible();
     await expect(this.globalFeedBtn).toBeVisible();
   }
